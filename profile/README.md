@@ -1,6 +1,6 @@
 # Comfort Curators
 
-Building software that orchestrates hospitality, property operations, and intelligent automation.
+Building software that orchestrates. 
 
 ## Products
 
