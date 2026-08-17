@@ -7,15 +7,10 @@ Building software that orchestrates.
 - Curator
 - SuperhostOS
 - Comfort Curators Platform
-
+- comfort-ci
 ## Tech
 
-- Cloudflare Workers
-- TypeScript
-- Hono
-- PostgreSQL
-- Drizzle ORM
-- GitHub Actions
+- Tech
 
 ## Philosophy
 
