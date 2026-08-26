@@ -3,16 +3,32 @@
 Guidance for Claude Code working in this repository. Nobody keeps full recall
 between sessions — load-bearing facts go here or they did not happen.
 
-## CI — comfort-ci owns delivery (20 Aug 2026)
+## No CI — deploy by hand (retired 25 Aug 2026)
 
-Do not add GitHub Actions workflows. The GitHub App webhook
-`https://comfort-ci.rajvansh.workers.dev/webhook` is the only push path.
-Empty repo Settings → Webhooks is correct; Apps do not appear there.
+`comfort-ci` is retired. Founder decision, 25 Aug 2026: it was a real DeepTech
+R&D artifact — its purpose was to build and prove the thing, not to run it
+forever — and that purpose was met the moment it was published as a Zenodo
+archive. Kept running live, it was silently unreliable (a token-minting bug
+broke its deploy step for who knows how long before anyone noticed) and it
+was reserving the bulk of the account's 1,500 vCPU container ceiling — 1,464
+of 1,500 — while barely using any of it. Both the `comfort-ci` Worker and its
+container applications are deleted from Cloudflare. `founder-console`, a
+dashboard built entirely around talking to it, is deleted too — nothing else
+depended on it.
 
-Prove the factory with `GET https://comfort-ci.rajvansh.workers.dev/health`.
-Live `release` on 20 Aug 2026: `2026-08-20-standard-4-all`. Every container
-application on this Cloudflare account is `standard-4` (4 vCPU / 12 GiB / 20 GB).
-The binding constraint is **1,500 concurrent vCPU**, not the 6 TiB memory line.
-`wrangler deploy` SUCCESS is not proof a container changed size — read
-`GET /accounts/:acct/containers/applications/:id` `vcpu` / `memory`.
+The GitHub App webhook that used to trigger it is dead; a push to `main` does
+nothing now. **Deploy by hand**: `wrangler deploy` (or this repo's documented
+build+deploy command, if one exists above), same checks run manually first
+(typecheck/lint/test/build) that the removed pipeline used to run for you.
 
+Do not add GitHub Actions workflows to fill this gap. GitHub Actions was
+already tried on this account before comfort-ci existed and was already
+broken — a `Deploy Site` workflow once sat `queued` for over a month with
+**zero jobs ever allocated**, and default-setup CodeQL has failed instantly
+with no logs on every commit since. Recommending it as the replacement would
+trade one silently-broken automation for a different one with the same
+failure signature.
+
+This is deliberate, not a gap waiting to be filled: no CI, no automated
+deploy, manual only, until deploy frequency or team size actually make
+manual the bottleneck.
