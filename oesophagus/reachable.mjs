@@ -57,9 +57,18 @@ function resolveSpecifier(fromFile, spec) {
   if (!spec.startsWith(".")) return null; // bare specifier — a package, not ours
   const base = resolve(dirname(fromFile), spec);
   const candidates = [base];
-  if (!extname(base)) {
-    for (const ext of [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"]) candidates.push(base + ext);
-    for (const ext of [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"]) candidates.push(join(base, "index" + ext));
+  const ext = extname(base);
+  if (!ext) {
+    for (const e of [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"]) candidates.push(base + e);
+    for (const e of [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"]) candidates.push(join(base, "index" + e));
+  } else if ([".js", ".jsx", ".mjs", ".cjs"].includes(ext)) {
+    // TypeScript ESM writes `import "./app.hono.js"` for a file named
+    // `app.hono.ts` — the specifier names the EMITTED file, not the source.
+    // Without this, every such import resolves to nothing and the importee is
+    // reported as an orphan. It reported SuperhostOS's own mounted app that way,
+    // and inflated that package's count from 9 to 64.
+    const stem = base.slice(0, -ext.length);
+    for (const e of [".ts", ".tsx", ".mts", ".cts"]) candidates.push(stem + e);
   }
   for (const c of candidates) if (known.has(c) && existsSync(c)) return c;
   return null;
