@@ -66,8 +66,8 @@ node oesophagus/surface.mjs /path/to/package --json
 | `HostOS/computer` | 5 | 35 | 3 | 0 |
 | `kimi` | 2 | 16 | 1 | 0 |
 | `Superhostos/apps/web` | 2 | 10 | 2 | 0 |
-| `seek` (reek) | **0** | **0** | — | — |
-| `curatory` | **0** | **0** | — | — |
+| `seek` (reek) | 1 | 8 | 1 | 0 |
+| `curatory` | 1 | 8 | 1 | 0 |
 
 Every package except `apps/api` is already inside the rule. That is the honest
 headline, and it is a better one than the org has been telling itself.
@@ -76,14 +76,22 @@ headline, and it is a better one than the org has been telling itself.
 
 **Zero is not "inside the rule." It is outside the measurement.**
 
-| Worker | Source | Tests | What it holds |
-| --- | ---: | ---: | --- |
-| `reek` (`seek`) | 1,226 lines | 0 | account API token, `worker_loader`, deploys other Workers without approval |
-| `curatory` | 935 lines | 0 | live showroom and marketplace Worker, backend bulletin, admin surface |
+**Closed the same day it was found, 6 September 2026.** Both now carry 8 cases —
+the shape, not a compromise — and both gates run them.
 
-`reek` is also the Worker whose `isAuthorized` returns `true` when its secret is
-unset. Nothing in the repository would ever have caught that, because there is
-nothing in the repository that runs.
+| Worker | Source | Tests | What the first suite found |
+| --- | --- | ---: | --- |
+| `reek` (`seek`) | 1,226 lines | 0 → **8** | `isAuthorized` returned `true` when its secret was unset, on a Worker holding an account API token and `worker_loader`. Fixed and proven by reintroducing the defect. |
+| `curatory` | 935 lines | 0 → **8** | **No defect.** The authorization was already correct. What was undocumented is that its whole admin surface rests on one bypass — `hostname === "do"` — being unreachable from outside. |
+
+That contrast is the argument for the floor better than either case alone: the
+same "0" hid a live account-wide hole in one repository and nothing at all in
+the other, and there was no way to tell which without writing something that
+runs.
+
+`reek`'s defect had survived because eleven lines sat in the middle of a
+1,226-line file that nothing could execute. `curatory`'s assumption survived
+because it was true — and nothing would have noticed the day it stopped being.
 
 A module at 49 cases and a module at 0 fail the same underlying test — *nothing
 is trusted above the level at which it can be executed* — and only one of them
