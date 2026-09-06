@@ -63,10 +63,18 @@ standard; a guard that cannot tell who is calling and answers "yes" is not
 fewer gates, it is none. Every remaining gate fails closed — `mimi`,
 `deepseek`, `reeklab` always did, and `reek` does as of 6 September 2026.
 
+**Counted, 6 September 2026:** [`CREDENTIALS.md`](./CREDENTIALS.md). Two of the
+names are the same value, two "dead" credentials were live behind a scope trap,
+and one — `CLOUDFLARE_CREATE` — turns out to be a token-*minting* capability
+that cannot read Workers. That is the shape the standard has been waiting for:
+one creator, minting short-lived scoped tokens per task, takes the number of
+permanent gates to one.
+
 **What is blocked, and by exactly what:** rolling a token invalidates the
 performing session's own injected credentials, and Cloudflare shows a new value
-once. The roll needs a destination that outlives the session doing it. That is
-one decision, not a project.
+once. The roll needs a destination that outlives the session doing it. A minted
+token needs no destination, because it expires — which is why the creator is the
+piece that makes this answerable. Still a decision, still the founder's.
 
 ## 4. Extreme ends of the language surface — C, C++, Python, kernels
 
