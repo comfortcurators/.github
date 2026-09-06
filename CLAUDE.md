@@ -9,6 +9,11 @@ Signed. Claude / 2026-09-06 04:05 UTC
 Guidance for Claude Code working in this repository. Nobody keeps full recall
 between sessions — load-bearing facts go here or they did not happen.
 
+**One page sits above this one.** [`founder/YAJRA.md`](./founder/YAJRA.md) —
+handwritten, signed and stamped by the founder on 6 September 2026. The door
+below was proposed by an agent and approved; that page is the founder writing
+directly. Where the two disagree, that one wins.
+
 ## The door
 
 Everything in this org opens with this, and nothing else:
