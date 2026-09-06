@@ -60,6 +60,20 @@ which it can be executed.* A census that cannot see itself is not a census. The
 line that fixes it carries a comment saying so, rather than being quietly
 corrected.
 
+## The limitation that matters most
+
+**It reads the working tree, so its answer depends on which branch each checkout
+is sitting on.** On its first full run it reported `kimi` as doorless. `kimi`
+had a door — on `claude/new-session-xt2ksw`, pushed hours earlier — and the
+local checkout happened to be on `main`. The tool was not wrong about the file
+it read; it was wrong about the repository, which is worse, because the output
+says "repository".
+
+Until it resolves a named ref rather than whatever is checked out, treat a
+`missing` row as *"no door on the branch this checkout is on"*, and confirm
+against the remote before acting on it. That is the difference between a census
+and a snapshot of one machine.
+
 ## What is not done
 
 - **Curator does not eat this yet.** The manifest exists; no ingest path
