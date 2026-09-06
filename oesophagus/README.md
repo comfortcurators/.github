@@ -112,6 +112,49 @@ elsewhere. The repository's own `CLAUDE.md` still says "Navbar/Footer/
 CookieBanner/ExitIntent are hidden for `/host/*`"; three of those four are real
 and `Navbar` is not one of them.
 
+### Every package, 2026-09-06
+
+| Package | Modules | Imported | **Imported by nothing** |
+| --- | ---: | ---: | ---: |
+| `Host/frontend/src` | 133 | 100 | **32** |
+| `Superhostos/apps/api/src` | 326 | 200 | 9 |
+| `Superhostos/apps/web/src` | 69 | 59 | 7 |
+| `curator/service/worker/src` | 43 | 36 | 5 |
+| `HostOS/computer-v2/src` | 24 | 18 | 5 |
+| `HostOS/computer/src` | 26 | 22 | 4 |
+| `seek/src` | 11 | 4 | 2 |
+| `kimi/src` | 19 | 17 | 1 |
+| `curatory/src` | 7 | 5 | **0** |
+
+### The tool was wrong first, by a factor of seven
+
+Its first run reported **64** orphans in `Superhostos/apps/api/src`, including
+`app.hono.ts` — the file that repo's own `CLAUDE.md` calls the mounted app. That
+was the instrument, not the code. TypeScript ESM writes `import "./app.hono.js"`
+for a file named `app.hono.ts`: the specifier names the *emitted* file. Every
+such import resolved to nothing, so every importee looked orphaned. Fixed; the
+real figure is **9**.
+
+`Host` is unaffected by that bug — CRA imports carry no extension — so its 32
+stand.
+
+### What the remaining nine in the API actually are
+
+Two of them are worth more than the rest, because they meet SuperhostOS's own
+law — *a faculty that nothing calls is not evidence, it is a folder*:
+
+- **`domains/inventory/agents/{inventory,vendor,finance,booking}.agent.ts`** are
+  imported by **`inventory.test.ts` and nothing else.** `routes.hono.ts` serves a
+  static `AGENTS` list, not the classes. So `inventory.test.ts` — 28 cases,
+  eight named suites, one of the fourteen files over the founder's 17-test
+  wall — exercises four agent classes that no live path reaches.
+- **`queues/{email,ical-sync,notifications}.queue.ts`** have no matching queue in
+  `wrangler.toml`; its only queue binding is a `curator-ingest` producer.
+
+That is the two tools meeting: `surface.mjs` said `inventory` was one file
+wearing eight names, and `reachable.mjs` says half of what it tests is not
+wired to anything.
+
 **These are candidates, not a delete list.** The tool cannot see a module
 referenced only from HTML, one loaded by a runtime-built string, or one another
 repository imports. Removing a module is a decision, not a cleanup.
