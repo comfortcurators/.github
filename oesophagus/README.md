@@ -74,6 +74,48 @@ Until it resolves a named ref rather than whatever is checked out, treat a
 against the remote before acting on it. That is the difference between a census
 and a snapshot of one machine.
 
+## The third tool: `reachable.mjs`
+
+```bash
+node oesophagus/reachable.mjs /path/to/src
+node oesophagus/reachable.mjs /path/to/src --json
+```
+
+Lists modules **nothing imports**. Written the hour after being burned by exactly
+that: a component in `Host` called three API routes returning `503`, and a whole
+finding was written about *"blog likes are dead in the UI"* — before checking
+whether anything imports the component. It is in no built chunk. The endpoint and
+its only caller were both dead, and agreed with each other.
+
+The org law is *an import edge is not an execution*. This is the cheaper half:
+**no import edge is definitely not an execution.**
+
+It resolves real `import`/`require`/dynamic-`import` specifiers rather than
+grepping basenames, because a basename grep counts a comment or a similarly-named
+variable as a reference and under-reports. Entry points (`index`, `main`, `app`,
+`worker`, `server`, `client`, tests, configs) are excluded — a bundler enters
+there, so "nothing imports it" says nothing about them.
+
+### `Host/frontend/src`, 2026-09-06
+
+**133 modules · 100 imported by something · 32 imported by nothing.**
+
+Roughly a quarter of the tree. Spot-checked rather than trusted: `ContactForm`,
+`WaitlistForm`, `Testimonials` and `RadiatingOrb` all have no importer, and
+`ContactPage.js` turns out to carry its own inline form — the pages were
+rewritten and the components they replaced were left behind.
+
+**The one that proves the tool is not just grepping:** it flags
+`components/Navbar.js`, which sounds impossible. `App.js` imports `Footer` and
+`CookieBanner` and **not** `Navbar` — the live page's `<nav>` elements come from
+elsewhere. The repository's own `CLAUDE.md` still says "Navbar/Footer/
+CookieBanner/ExitIntent are hidden for `/host/*`"; three of those four are real
+and `Navbar` is not one of them.
+
+**These are candidates, not a delete list.** The tool cannot see a module
+referenced only from HTML, one loaded by a runtime-built string, or one another
+repository imports. Removing a module is a decision, not a cleanup.
+
 ## What is not done
 
 - **Curator does not eat this yet.** The manifest exists; no ingest path
