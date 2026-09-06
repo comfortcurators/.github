@@ -80,8 +80,18 @@ container applications are deleted from Cloudflare. `founder-console`, a
 dashboard built entirely around talking to it, is deleted too — nothing else
 depended on it.
 
-The GitHub App webhook that used to trigger it is dead; a push to `main` does
-nothing now. **Deploy by hand**: `wrangler deploy` (or this repo's documented
+**One exception, found 6 September 2026 — `comfortcurators/HostOS`.** Cloudflare
+Workers Builds has a live Git integration there and deploys the `hostos` Worker,
+the privileged operator plane, on every push to `main` — including merges that
+change only markdown. Six such deploys on 6 September alone. See
+[`HostOS/CLAUDE.md`](https://github.com/comfortcurators/HostOS/blob/main/CLAUDE.md).
+
+That exception is bounded and was checked rather than assumed: five merges into
+`Superhostos`, `seek`, `curatory`, `curator` and `kimi` the same morning produced
+no deployment at all. Everything below is true for those; it is false for HostOS.
+
+The GitHub App webhook that used to trigger it is dead; outside HostOS, a push to
+`main` does nothing now. **Deploy by hand**: `wrangler deploy` (or this repo's documented
 build+deploy command, if one exists above), same checks run manually first
 (typecheck/lint/test/build) that the removed pipeline used to run for you.
 
