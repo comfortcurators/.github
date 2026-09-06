@@ -117,13 +117,13 @@ and `Navbar` is not one of them.
 | Package | Modules | Imported | **Imported by nothing** |
 | --- | ---: | ---: | ---: |
 | `Host/frontend/src` | 133 | 100 | **32** |
-| `Superhostos/apps/api/src` | 326 | 200 | 9 |
 | `Superhostos/apps/web/src` | 69 | 59 | 7 |
 | `curator/service/worker/src` | 43 | 36 | 5 |
-| `HostOS/computer-v2/src` | 24 | 18 | 5 |
+| `Superhostos/apps/api/src` | 326 | 205 | 4 |
+| `HostOS/computer-v2/src` | 24 | 18 | 4 |
 | `HostOS/computer/src` | 26 | 22 | 4 |
-| `seek/src` | 11 | 4 | 2 |
-| `kimi/src` | 19 | 17 | 1 |
+| `seek/src` | 5 | 1 | 1 |
+| `kimi/src` | 19 | 17 | **0** |
 | `curatory/src` | 7 | 5 | **0** |
 
 ### The tool was wrong first, by a factor of seven
@@ -143,17 +143,10 @@ stand.
 Two of them are worth more than the rest, because they meet SuperhostOS's own
 law — *a faculty that nothing calls is not evidence, it is a folder*:
 
-- **`domains/inventory/agents/{inventory,vendor,finance,booking}.agent.ts`** are
-  imported by **`inventory.test.ts` and nothing else.** `routes.hono.ts` serves a
-  static `AGENTS` list, not the classes. So `inventory.test.ts` — 28 cases,
-  eight named suites, one of the fourteen files over the founder's 17-test
-  wall — exercises four agent classes that no live path reaches.
-- **`queues/{email,ical-sync,notifications}.queue.ts`** have no matching queue in
-  `wrangler.toml`; its only queue binding is a `curator-ingest` producer.
-
-That is the two tools meeting: `surface.mjs` said `inventory` was one file
-wearing eight names, and `reachable.mjs` says half of what it tests is not
-wired to anything.
+`domains/curator/evals/run.ts`, `domains/curator/from-curator-package.ts`, and
+`queues/{email,ical-sync}.queue.ts`. The queue modules have no matching queue in
+`wrangler.toml` — its only queue binding is a `curator-ingest` producer — so
+those two are the ones worth a decision.
 
 **These are candidates, not a delete list.** The tool cannot see a module
 referenced only from HTML, one loaded by a runtime-built string, or one another

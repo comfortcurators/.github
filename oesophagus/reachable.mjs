@@ -61,7 +61,14 @@ function resolveSpecifier(fromFile, spec) {
   if (!spec.startsWith(".")) return null; // bare specifier — a package, not ours
   const base = resolve(dirname(fromFile), spec);
   const candidates = [base];
-  const ext = extname(base);
+  // extname() reports the LAST dotted segment, so "./agents/booking.agent"
+  // yields ".agent" and a file named booking.agent.ts is never tried. Treat a
+  // segment that is not a module extension as part of the stem — this is how
+  // the sweep reported SuperhostOS's inventory agents as imported by nothing
+  // when orchestrator.ts imports three of them by exactly that spelling.
+  const raw = extname(base);
+  const MODULE_EXT = [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".mts", ".cts"];
+  const ext = MODULE_EXT.includes(raw) ? raw : "";
   if (!ext) {
     for (const e of [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"]) candidates.push(base + e);
     for (const e of [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"]) candidates.push(join(base, "index" + e));
