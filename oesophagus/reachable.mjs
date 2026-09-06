@@ -30,6 +30,10 @@ const SKIP = new Set(["node_modules", "dist", "build", ".git", ".wrangler", "cov
 // Files that are reachable by definition — a bundler, a runtime or a test
 // runner enters here, so "nothing imports it" says nothing about them.
 const ENTRY = [
+  // Ambient type declarations are never imported by anything and are not
+  // supposed to be — `kimi/src/secrets.d.ts` was reported as an orphan on the
+  // first sweep, which is the tool being wrong, not the file being dead.
+  /\.d\.(m|c)?ts$/,
   /(^|\/)(index|main|app|worker|server|client)\.(m|c)?[jt]sx?$/i,
   /\.(test|spec)\.(m|c)?[jt]sx?$/,
   /(^|\/)(vite|craco|tailwind|postcss|eslint|vitest|jest)\.config\./,
