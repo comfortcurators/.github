@@ -1,4 +1,4 @@
-# YAJRA
+# YA|RA
 
 ```
 Intent : Language for all.
@@ -6,7 +6,7 @@ Pattern: Language aforementioned.
 Signed. Yash Rajvansh / 2026-09-06 12:40 IST
 ```
 
-Handwritten, signed and stamped by the founder. Scan: [`yajra-2026-09-06.jpg`](./yajra-2026-09-06.jpg).
+Handwritten, signed and stamped by the founder. Scan: [`ya-ra-2026-09-06.jpg`](./ya-ra-2026-09-06.jpg).
 
 This page is a transcription, not an interpretation. Where a line is ambiguous
 on the page it is left ambiguous here. Nothing below is an agent's paraphrase.
@@ -20,7 +20,7 @@ directly, and where the two ever disagree, this wins.
 
 ## The page, as written
 
-**YAJRA — 2026 | 12:40 | Sunday | Six | Sept — *Yash Rajvansh***
+**YA|RA — 2026 | 12:40 | Sunday | Six | Sept — *Yash Rajvansh***
 
 ```
 Intent : Language for all
