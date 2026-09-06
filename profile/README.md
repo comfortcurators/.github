@@ -2,9 +2,11 @@
 
 **Governing software for heterogeneous systems.**
 
-Comfort Curators Private Limited builds software that observes, compares, governs and learns across models, runtimes, infrastructure and real operational workloads.
+Comfort Curators Private Limited (CIN U47912HR2026PTC144195, incorporated 15 April 2026) builds software that observes, compares, governs and learns across models, runtimes, infrastructure and real operational workloads.
 
 The company is not organized around a single model, cloud or application category. The common problem is coordination: how a system knows what exists, what each source says, where sources disagree, what action is actually permitted, and whether the outcome verified the decision.
+
+Recognised by the Government of India as a **DeepTech startup** — DPIIT **DIPP260899**, issued 12 May 2026 under G.S.R. 108(E), in force to 14 April 2046. That recognition is granted on self-certified evidence of ongoing R&D, novel IP and commercialisation — not a marketing label, an obligation this organization's repositories are held to.
 
 ## The work
 
@@ -12,7 +14,9 @@ The company is not organized around a single model, cloud or application categor
 | --- | --- |
 | **SuperhostOS** | A governing runtime for heterogeneous compute and operational systems. Hospitality is its live proving ground, not its identity. |
 | **Curator** | Long-term memory, comparison, judgment and implementation kernel. It preserves agreement, conflict, tails and recurring patterns instead of reducing every decision to a vote. |
-| **comfort-ci** | The organization’s CI/CD authority: admission, durable queueing, isolated execution, deployment and exact-commit verification. |
+| **Curatom** | A tenant-scoped agent registry with a policy engine, a founder-verified business-context layer, and grounded memory recall — the source AI agents read before acting on a company's behalf. Archived on Zenodo: [10.5281/zenodo.22112980](https://doi.org/10.5281/zenodo.22112980). |
+| **HostOS** | The operator plane: dynamic code execution, privileged GitHub write access, the MCP adapter external agent clients connect through. |
+| **comfort-ci** | The organization's CI/CD authority: admission, durable queueing, isolated execution, deployment and exact-commit verification. |
 | **Host** | The public company surface: product, research, governance and the operating-stay interface. |
 | **Curatory** | An isolated spatial documentation laboratory for making systems, evidence, provenance, authority and history legible. |
 
@@ -68,4 +72,4 @@ Company writing, field notes, system explanations and research are published thr
 
 ---
 
-Founded by **Yash Rajvansh**.
+Founded by **Yash Rajvansh** ([ORCID: 0009-0003-1658-2682](https://orcid.org/0009-0003-1658-2682)).
