@@ -1,7 +1,10 @@
 {
-  "generated_at": "2026-09-06T07:47:31.206Z",
+  "generated_at": "2026-09-06T20:43:28.338Z",
   "word_limit": 17,
-  "root": "/home/user",
+  "source": {
+    "kind": "github",
+    "org": "comfortcurators"
+  },
   "repositories": [
     {
       "repo": ".github",
@@ -14,13 +17,13 @@
         "pattern_words": 14,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "2e1f02c",
-        "branch": "claude/yara",
         "remote": "https://github.com/comfortcurators/.github",
-        "last_commit_at": "2026-09-06T07:46:34+00:00",
-        "commits": 16
+        "default_branch": "main",
+        "private": false,
+        "last_commit_at": "2026-09-06T13:04:25Z"
       }
     },
     {
@@ -34,26 +37,26 @@
         "pattern_words": 13,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "64f2fef",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/comfortcurators/comfort-ci",
-        "last_commit_at": "2026-09-06T04:15:24+00:00",
-        "commits": 61
+        "default_branch": "main",
+        "private": true,
+        "last_commit_at": "2026-09-06T04:15:43Z"
       }
     },
     {
       "repo": "curatom",
       "door": null,
       "missing": "no CLAUDE.md",
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "77f43b9",
-        "branch": "main",
-        "remote": "https://github.com/comfortcurators/curatom",
-        "last_commit_at": "2026-09-01T02:59:00+00:00",
-        "commits": 132
+        "remote": "https://github.com/comfortcurators/Curatom",
+        "default_branch": "main",
+        "private": false,
+        "last_commit_at": "2026-09-06T02:47:12Z"
       }
     },
     {
@@ -67,13 +70,13 @@
         "pattern_words": 14,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "c22f345",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/comfortcurators/curator",
-        "last_commit_at": "2026-09-06T04:13:52+00:00",
-        "commits": 63
+        "default_branch": "main",
+        "private": true,
+        "last_commit_at": "2026-09-06T08:31:17Z"
       }
     },
     {
@@ -87,13 +90,13 @@
         "pattern_words": 13,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "04f2cc3",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/comfortcurators/curatory",
-        "last_commit_at": "2026-09-06T04:14:37+00:00",
-        "commits": 57
+        "default_branch": "main",
+        "private": true,
+        "last_commit_at": "2026-09-06T08:03:32Z"
       }
     },
     {
@@ -107,13 +110,13 @@
         "pattern_words": 13,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "b0a86a2",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/comfortcurators/Host",
-        "last_commit_at": "2026-09-06T04:12:15+00:00",
-        "commits": 123
+        "default_branch": "main",
+        "private": true,
+        "last_commit_at": "2026-09-06T08:51:16Z"
       }
     },
     {
@@ -127,13 +130,13 @@
         "pattern_words": 14,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "cbdf195",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/comfortcurators/HostOS",
-        "last_commit_at": "2026-09-06T07:41:56+00:00",
-        "commits": 111
+        "default_branch": "main",
+        "private": true,
+        "last_commit_at": "2026-09-06T20:22:49Z"
       }
     },
     {
@@ -147,13 +150,13 @@
         "pattern_words": 14,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "0695043",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/comfortcurators/in",
-        "last_commit_at": "2026-09-06T07:46:59+00:00",
-        "commits": 14
+        "default_branch": "main",
+        "private": true,
+        "last_commit_at": "2026-09-06T07:48:32Z"
       }
     },
     {
@@ -167,13 +170,19 @@
         "pattern_words": 14,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "8861faa",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/comfortcurators/kimi",
-        "last_commit_at": "2026-09-06T04:16:08+00:00",
-        "commits": 98
+        "default_branch": "add-badges-to-readme",
+        "private": true,
+        "last_commit_at": "2026-09-06T04:16:28Z"
+      },
+      "default_branch_differs": {
+        "default_branch": "add-badges-to-readme",
+        "door_on_default": null,
+        "missing_on_default": "no CLAUDE.md",
+        "note": "default branch and main disagree; the door above is main's"
       }
     },
     {
@@ -187,13 +196,13 @@
         "pattern_words": 11,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "bf39760",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/comfortcurators/llm",
-        "last_commit_at": "2026-09-06T07:47:02+00:00",
-        "commits": 4
+        "default_branch": "main",
+        "private": true,
+        "last_commit_at": "2026-09-06T07:48:43Z"
       }
     },
     {
@@ -207,46 +216,46 @@
         "pattern_words": 15,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "c1980cd",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/comfortcurators/rajvanshyash",
-        "last_commit_at": "2026-09-06T04:17:33+00:00",
-        "commits": 12
+        "default_branch": "main",
+        "private": true,
+        "last_commit_at": "2026-09-06T04:17:51Z"
       }
     },
     {
       "repo": "seek",
       "door": {
         "intent": "Reek: a private agent Worker that edits and deploys Cloudflare Workers without approval prompts.",
-        "pattern": "Read `isAuthorized` in src/server.ts. It returns true when its secret is unset.",
+        "pattern": "npx vitest run. Flip auth.ts's guard to `return true` and two cases go red.",
         "signer": "Claude",
-        "timestamp": "2026-09-06 13:35 UTC",
+        "timestamp": "2026-09-06 15:10 UTC",
         "intent_words": 14,
-        "pattern_words": 12,
+        "pattern_words": 14,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "1f5ff43",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/comfortcurators/seek",
-        "last_commit_at": "2026-09-06T07:47:04+00:00",
-        "commits": 62
+        "default_branch": "main",
+        "private": true,
+        "last_commit_at": "2026-09-06T13:00:24Z"
       }
     },
     {
       "repo": "sissyphus",
       "door": null,
       "missing": "no CLAUDE.md",
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "e26eb26",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/yashrajvansh/sissyphus",
-        "last_commit_at": "2026-08-22T04:49:36+05:30",
-        "commits": 5
+        "default_branch": "main",
+        "private": false,
+        "last_commit_at": "2026-09-06T04:41:05Z"
       }
     },
     {
@@ -260,13 +269,13 @@
         "pattern_words": 10,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "e9e124a",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/comfortcurators/Sol",
-        "last_commit_at": "2026-09-06T07:46:57+00:00",
-        "commits": 10
+        "default_branch": "main",
+        "private": true,
+        "last_commit_at": "2026-09-06T07:48:21Z"
       }
     },
     {
@@ -280,13 +289,13 @@
         "pattern_words": 13,
         "over_limit": false
       },
+      "read_from": "main",
       "git": {
         "versioned": true,
-        "head": "e6d2958",
-        "branch": "claude/new-session-xt2ksw",
         "remote": "https://github.com/comfortcurators/Superhostos",
-        "last_commit_at": "2026-09-06T04:11:26+00:00",
-        "commits": 69
+        "default_branch": "main",
+        "private": true,
+        "last_commit_at": "2026-09-06T20:16:33Z"
       }
     }
   ]

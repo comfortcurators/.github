@@ -10,18 +10,61 @@ Signed. Claude / 2026-09-06 13:40 UTC
 
 > **Feed Curator and install oesophagus** — ⊦ all repository ⊦ all intent ⊦ all patterns
 
-This is the first half of it: the swallow, not the stomach. It reads, it writes
-nothing, and it makes no network call. Curator ingestion is not wired yet, and
-saying otherwise would be the exact failure the org door warns about — *a
-faculty that nothing calls is not evidence, it is a folder.*
+This is the first half of it: the swallow, not the stomach. It reads and writes
+nothing. Curator ingestion is not wired to a schedule yet, and saying otherwise
+would be the exact failure the org door warns about — *a faculty that nothing
+calls is not evidence, it is a folder.*
 
 ## Run it
 
 ```bash
-node oesophagus/extract.mjs                 # human census
-node oesophagus/extract.mjs --json          # machine manifest
+node oesophagus/extract.mjs                 # census of the WORKING TREES
+node oesophagus/extract.mjs --remote        # census of the REPOSITORIES
+node oesophagus/extract.mjs --remote --json # machine manifest
 node oesophagus/extract.mjs /some/root      # a different checkout root
+node oesophagus/extract.mjs --remote --repos=curator,HostOS,owner/other
 ```
+
+### The two modes are not interchangeable, and the difference has bitten twice
+
+Default mode reads whatever is checked out under `ROOT`, dirty edits included.
+`--remote` reads `CLAUDE.md` from GitHub. **A census of what happens to be
+checked out is not a census of the org**, and the JSON says which one you got
+in its `source` field so a consumer can never confuse them.
+
+It is not hypothetical. Both modes run against the same fifteen repositories on
+6 Sep 2026 disagree, live:
+
+| | `seek` | `kimi` |
+| --- | --- | --- |
+| working tree | *no CLAUDE.md* — the checkout is on a topic branch | door found |
+| repository | door found on `main` | door found on `main` |
+
+The `kimi` case is the one that nearly caused real damage: a session read the
+tree, concluded kimi was doorless, and almost wrote it a second door while a
+better one already existed on another branch.
+
+`--remote` carries its own trap and reports it rather than hiding it. A repo's
+GitHub **default branch is not necessarily its live one** — `kimi`'s default is
+`add-badges-to-readme`, 65 commits behind `main`. So `--remote` reads the
+default branch, reads `main` separately when they differ, prefers `main`, and
+prints `! default branch '…' disagrees` so the reader sees the choice was made.
+
+Two more things `--remote` does deliberately:
+
+- **It does not call `GET /orgs/<org>/repos`.** That endpoint answers 403 to
+  this GitHub App installation token while every per-repository read answers
+  200. One 403 is one endpoint, not a policy — so the repo set comes from
+  `--repos=` or the local directory names, and that is the one place local
+  layout still leaks in. Pass `--repos` when you need to be sure of the set.
+- **A refused repository is a row, not a crash.** Dying on the first repo you
+  cannot see reports nothing at all, which is worse than reporting fourteen
+  doors and one refusal.
+
+If `--remote` returns 401 on a token that works in `curl`, that is not the
+token. Node's `fetch` ignores `HTTPS_PROXY` unless told to; the script re-execs
+itself once with `NODE_USE_ENV_PROXY=1` for exactly this reason. *Test a
+credential by doing the operation, not by asking whether it is valid.*
 
 ## What it counts as a door
 
