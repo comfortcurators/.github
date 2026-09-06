@@ -23,7 +23,11 @@ const ROOT = process.argv.find((a) => !a.startsWith("-") && a !== process.argv[0
 const GOOD = 8;
 const WALL = 17;
 
-const TEST_FILE = /\.(test|spec)\.[cm]?[jt]sx?$/;
+// Two ecosystems, because this org has both. curator's entire suite is pytest
+// and an earlier version of this tool reported it as "2 suites, 7 cases" — a
+// number that was wrong in the direction that flatters, which is the worst one.
+const TEST_FILE = /(?:\.(test|spec)\.[cm]?[jt]sx?|^test_.+\.py|_test\.py)$/;
+const PY_FILE = /\.py$/;
 const CASE = /^\s*(?:it|test)(?:\.\w+)?\s*\(/gm;
 const SUITE = /^\s*describe(?:\.\w+)?\s*\(\s*["'`](.+?)["'`]/gm;
 
@@ -43,8 +47,13 @@ function walk(dir, out = []) {
 
 const rows = walk(ROOT).map((file) => {
   const text = readFileSync(file, "utf8");
-  const cases = (text.match(CASE) ?? []).length;
-  const suites = [...text.matchAll(SUITE)].map((m) => m[1]);
+  const py = PY_FILE.test(file);
+  const cases = py
+    ? (text.match(/^\s*(?:async\s+)?def\s+test_/gm) ?? []).length
+    : (text.match(CASE) ?? []).length;
+  const suites = py
+    ? (text.match(/^class\s+(Test\w+)/gm) ?? []).map((s) => s.replace(/^class\s+/, ""))
+    : [...text.matchAll(SUITE)].map((m) => m[1]);
   return { file: relative(ROOT, file), cases, suites, lines: text.split("\n").length };
 });
 
