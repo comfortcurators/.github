@@ -1,0 +1,293 @@
+{
+  "generated_at": "2026-09-06T07:46:25.561Z",
+  "word_limit": 17,
+  "root": "/home/user",
+  "repositories": [
+    {
+      "repo": ".github",
+      "door": {
+        "intent": "Make one door every repo, Worker, session and commit in this org opens with.",
+        "pattern": "Look at any of them. A first glimpse longer than three lines is wrong.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 04:05 UTC",
+        "intent_words": 14,
+        "pattern_words": 14,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "730771c",
+        "branch": "claude/yara",
+        "remote": "https://github.com/comfortcurators/.github",
+        "last_commit_at": "2026-09-06T07:43:59+00:00",
+        "commits": 15
+      }
+    },
+    {
+      "repo": "comfort-ci",
+      "door": {
+        "intent": "Evidence-first CI/CD. A commit, a successful command and a live deployment are different facts.",
+        "pattern": "Retired. Worker and containers deleted from Cloudflare. Verify there before believing anything here.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 04:25 UTC",
+        "intent_words": 14,
+        "pattern_words": 13,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "64f2fef",
+        "branch": "claude/new-session-xt2ksw",
+        "remote": "https://github.com/comfortcurators/comfort-ci",
+        "last_commit_at": "2026-09-06T04:15:24+00:00",
+        "commits": 61
+      }
+    },
+    {
+      "repo": "curatom",
+      "door": null,
+      "missing": "no CLAUDE.md",
+      "git": {
+        "versioned": true,
+        "head": "77f43b9",
+        "branch": "main",
+        "remote": "https://github.com/comfortcurators/curatom",
+        "last_commit_at": "2026-09-01T02:59:00+00:00",
+        "commits": 132
+      }
+    },
+    {
+      "repo": "curator",
+      "door": {
+        "intent": "Observe, learn, implement. Keep agreement, conflict and tails — never reduce a decision to a vote.",
+        "pattern": "Read the account and the live Worker. Queue topology here has drifted from reality.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 04:21 UTC",
+        "intent_words": 16,
+        "pattern_words": 14,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "c22f345",
+        "branch": "claude/new-session-xt2ksw",
+        "remote": "https://github.com/comfortcurators/curator",
+        "last_commit_at": "2026-09-06T04:13:52+00:00",
+        "commits": 63
+      }
+    },
+    {
+      "repo": "curatory",
+      "door": {
+        "intent": "The independent showroom and marketplace Worker. Its backend bulletin never reaches the public surface.",
+        "pattern": "GET /health on the live Worker. Deployed by hand from main, single owner.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 04:23 UTC",
+        "intent_words": 14,
+        "pattern_words": 13,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "04f2cc3",
+        "branch": "claude/new-session-xt2ksw",
+        "remote": "https://github.com/comfortcurators/curatory",
+        "last_commit_at": "2026-09-06T04:14:37+00:00",
+        "commits": 57
+      }
+    },
+    {
+      "repo": "Host",
+      "door": {
+        "intent": "Carry the company's public surface. Describe benefits freely; never the mechanism behind them.",
+        "pattern": "Ask the deployed URL, not this repository. Two implementations of these endpoints exist.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 04:16 UTC",
+        "intent_words": 13,
+        "pattern_words": 13,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "b0a86a2",
+        "branch": "claude/new-session-xt2ksw",
+        "remote": "https://github.com/comfortcurators/Host",
+        "last_commit_at": "2026-09-06T04:12:15+00:00",
+        "commits": 123
+      }
+    },
+    {
+      "repo": "HostOS",
+      "door": {
+        "intent": "The operator plane. Privileged tools behind two independent gates; the blast radius is the point.",
+        "pattern": "Count the manifest yourself. This file has quoted the wrong tool count for days.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 04:19 UTC",
+        "intent_words": 15,
+        "pattern_words": 14,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "cbdf195",
+        "branch": "claude/new-session-xt2ksw",
+        "remote": "https://github.com/comfortcurators/HostOS",
+        "last_commit_at": "2026-09-06T07:41:56+00:00",
+        "commits": 111
+      }
+    },
+    {
+      "repo": "in",
+      "door": {
+        "intent": "Nearly empty. One README, one archive of an old Host extraction. No running code.",
+        "pattern": "`ls archive/`. If you expected a service here, you are in the wrong repository.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 13:35 UTC",
+        "intent_words": 14,
+        "pattern_words": 14,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "3405e40",
+        "branch": "claude/new-session-xt2ksw",
+        "remote": "https://github.com/comfortcurators/in",
+        "last_commit_at": "2026-08-26T00:03:13+00:00",
+        "commits": 13
+      }
+    },
+    {
+      "repo": "kimi",
+      "door": {
+        "intent": "A coding-agent Worker over Kimi on Workers AI. Deployed as `mimi`, not `kimi`.",
+        "pattern": "`git checkout main` first. The GitHub default branch is 65 commits behind.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 13:35 UTC",
+        "intent_words": 13,
+        "pattern_words": 12,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "4af1237",
+        "branch": "main",
+        "remote": "https://github.com/comfortcurators/kimi",
+        "last_commit_at": "2026-08-26T00:44:33+00:00",
+        "commits": 97
+      }
+    },
+    {
+      "repo": "llm",
+      "door": {
+        "intent": "Cloudflare's LLM chat-app template, deployed unmodified as the `llm` Worker.",
+        "pattern": "Diff `src/` against cloudflare/templates. Divergence is the only thing worth reading.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 13:35 UTC",
+        "intent_words": 10,
+        "pattern_words": 11,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "58229ff",
+        "branch": "claude/new-session-xt2ksw",
+        "remote": "https://github.com/comfortcurators/llm",
+        "last_commit_at": "2026-08-26T00:03:13+00:00",
+        "commits": 3
+      }
+    },
+    {
+      "repo": "rajvanshyash",
+      "door": {
+        "intent": "The founder's personal site — identity and publication index — built on a React Router starter.",
+        "pattern": "Read git log. The real work here is the identity commits; the rest is template.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 04:31 UTC",
+        "intent_words": 16,
+        "pattern_words": 15,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "c1980cd",
+        "branch": "claude/new-session-xt2ksw",
+        "remote": "https://github.com/comfortcurators/rajvanshyash",
+        "last_commit_at": "2026-09-06T04:17:33+00:00",
+        "commits": 12
+      }
+    },
+    {
+      "repo": "seek",
+      "door": {
+        "intent": "Reek: a private agent Worker that edits and deploys Cloudflare Workers without approval prompts.",
+        "pattern": "Read `isAuthorized` in src/server.ts. It returns true when its secret is unset.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 13:35 UTC",
+        "intent_words": 14,
+        "pattern_words": 12,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "d5d430e",
+        "branch": "main",
+        "remote": "https://github.com/comfortcurators/seek",
+        "last_commit_at": "2026-08-26T01:12:09+00:00",
+        "commits": 61
+      }
+    },
+    {
+      "repo": "sissyphus",
+      "door": null,
+      "missing": "no CLAUDE.md",
+      "git": {
+        "versioned": true,
+        "head": "e26eb26",
+        "branch": "claude/new-session-xt2ksw",
+        "remote": "https://github.com/yashrajvansh/sissyphus",
+        "last_commit_at": "2026-08-22T04:49:36+05:30",
+        "commits": 5
+      }
+    },
+    {
+      "repo": "Sol",
+      "door": {
+        "intent": "An n8n-on-DigitalOcean deployment template, plus the mythos documents kept beside it.",
+        "pattern": "Read README.md and mythos_system_card.md. Nothing here is deployed on Cloudflare.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 13:35 UTC",
+        "intent_words": 11,
+        "pattern_words": 10,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "ea6dfc3",
+        "branch": "claude/new-session-xt2ksw",
+        "remote": "https://github.com/comfortcurators/Sol",
+        "last_commit_at": "2026-08-26T00:03:13+00:00",
+        "commits": 9
+      }
+    },
+    {
+      "repo": "Superhostos",
+      "door": {
+        "intent": "Govern heterogeneous compute by cost and capability. Hospitality is the workload, never the identity.",
+        "pattern": "Ask the live system, not this file. It has been confidently wrong before.",
+        "signer": "Claude",
+        "timestamp": "2026-09-06 04:14 UTC",
+        "intent_words": 14,
+        "pattern_words": 13,
+        "over_limit": false
+      },
+      "git": {
+        "versioned": true,
+        "head": "e6d2958",
+        "branch": "claude/new-session-xt2ksw",
+        "remote": "https://github.com/comfortcurators/Superhostos",
+        "last_commit_at": "2026-09-06T04:11:26+00:00",
+        "commits": 69
+      }
+    }
+  ]
+}
