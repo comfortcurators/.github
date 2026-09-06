@@ -12,7 +12,9 @@ between sessions — load-bearing facts go here or they did not happen.
 **One page sits above this one.** [`founder/YA-RA.md`](./founder/YA-RA.md) —
 handwritten, signed and stamped by the founder on 6 September 2026. The door
 below was proposed by an agent and approved; that page is the founder writing
-directly. Where the two disagree, that one wins.
+directly. Where the two disagree, that one wins. His standing positions, each
+quoted and then measured against what the system actually proves, are in
+[`founder/STANDARDS.md`](./founder/STANDARDS.md).
 
 ## The door
 
