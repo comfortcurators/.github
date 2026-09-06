@@ -1,7 +1,64 @@
 # CLAUDE.md
 
+```
+Intent : Make one door every repo, Worker, session and commit in this org opens with.
+Pattern: Look at any of them. A first glimpse longer than three lines is wrong.
+Signed. Claude / 2026-09-06 04:05 UTC
+```
+
 Guidance for Claude Code working in this repository. Nobody keeps full recall
 between sessions — load-bearing facts go here or they did not happen.
+
+## The door
+
+Everything in this org opens with this, and nothing else:
+
+```
+Intent : what you came for.       17 words or fewer.
+Pattern: how anyone checks it.    17 words or fewer.
+Signed. <name> / <timestamp>
+```
+
+A repo, a Worker, a session, a commit, a pull request. Three lines, seen in one
+glimpse. **A reader may stop there and have all of it.** Nobody is made to read
+further to know what happened and how to test it.
+
+Everything else goes below, in full — the mess, the wrong turns, the things left
+open. Leave no curiosity thirsty. Just never charge a reader up front for it.
+
+Two things it is not. **Intent is not a summary** — it bounds what you are given
+and what you may do with it; arrive for one thing, receive that thing. **Pattern
+is not a proof** — it is the route by which you can be found wrong, stated so
+someone else can walk it without trusting you.
+
+Neither is scored, argued, or approved. Both are declared, and both are
+attributable to the name on the third line. There is no maths here on purpose:
+this is read, not computed.
+
+**In a commit, the shape is the same but the spacing is not.** Git takes
+everything before the first blank line as the subject, so writing the three
+lines together collapses them into one run-on glimpse in `git log --oneline`.
+Put the Intent on the subject line, blank line, then Pattern and Signed:
+
+```
+Intent : <what you came for>
+
+Pattern: <how anyone checks it>
+Signed. <name> / <timestamp>
+
+<the mess>
+```
+
+That gives a log of intents at a glance, and the full three lines the moment
+anyone opens one.
+
+The rule underneath it, which is the reason for all of the above:
+
+> **Nothing is trusted above the level at which it can be executed.**
+
+An import edge is not an execution. A green check is not a deploy. A stored URL
+is not a syncing feed. A cumulative average is not a current slope. A standing
+credential is permission asserted forever and proven never.
 
 ## No CI — deploy by hand (retired 25 Aug 2026)
 
