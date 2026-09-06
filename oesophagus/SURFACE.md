@@ -56,10 +56,52 @@ node oesophagus/surface.mjs /path/to/package
 node oesophagus/surface.mjs /path/to/package --json
 ```
 
+## Every package, 2026-09-06
+
+| Package | Suites | Cases | Within 8 | Over 17 |
+| --- | ---: | ---: | ---: | ---: |
+| `Superhostos/apps/api` | 117 | 1,056 | 71 | **14** |
+| `curator` | 15 | 84 | 13 | 0 |
+| `HostOS/computer-v2` | 12 | 64 | 10 | 0 |
+| `HostOS/computer` | 5 | 35 | 3 | 0 |
+| `kimi` | 2 | 16 | 1 | 0 |
+| `Superhostos/apps/web` | 2 | 10 | 2 | 0 |
+| `seek` (reek) | **0** | **0** | — | — |
+| `curatory` | **0** | **0** | — | — |
+
+Every package except `apps/api` is already inside the rule. That is the honest
+headline, and it is a better one than the org has been telling itself.
+
+## The floor, which the rule does not name
+
+**Zero is not "inside the rule." It is outside the measurement.**
+
+| Worker | Source | Tests | What it holds |
+| --- | ---: | ---: | --- |
+| `reek` (`seek`) | 1,226 lines | 0 | account API token, `worker_loader`, deploys other Workers without approval |
+| `curatory` | 935 lines | 0 | live showroom and marketplace Worker, backend bulletin, admin surface |
+
+`reek` is also the Worker whose `isAuthorized` returns `true` when its secret is
+unset. Nothing in the repository would ever have caught that, because there is
+nothing in the repository that runs.
+
+A module at 49 cases and a module at 0 fail the same underlying test — *nothing
+is trusted above the level at which it can be executed* — and only one of them
+shows up when you rank by count descending. Read this table from both ends.
+
+## The tool was wrong once, in the flattering direction
+
+Its first version reported `curator` as **2 suites, 7 cases** — clean, inside
+the rule, nothing to see. `curator`'s entire suite is pytest; the walker only
+matched `*.test.ts`. The real figure is 15 suites and 84 cases, still clean, but
+the tool had no way to know that when it said so.
+
+An instrument that under-reports is worse than one that over-reports, because
+the answer it gives is the one nobody questions.
+
 ## Not yet done
 
-- Only `apps/api` has been measured. `curator`, `hostos`, `curatory` and the web
-  packages have not.
 - Nothing correlates a suite's case count with its module's line count or export
   count. The count of *exports* is probably the truer measure of surface, and
   this tool does not read the module at all — only its tests.
+- `curatom` is not measured here; it is frozen until 8 October.
