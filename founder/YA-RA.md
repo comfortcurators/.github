@@ -76,6 +76,45 @@ Pattern: Fuck old protocols of programming.
 
 ---
 
+## A second statement — 7 September 2026
+
+Written by the founder directly, in a session, the day after the page above.
+Transcribed verbatim; the emphasis is his.
+
+> YA|RA is becoming operational grammar, not ornament:
+>
+> ```
+> Intent  names what may become true.
+> Pattern states how reality can contradict it.
+> Signed  preserves who stood behind the attempt.
+> ```
+
+**This is the definition of the three lines, and it supersedes the agent's
+phrasing of them in [`../CLAUDE.md`](../CLAUDE.md) wherever the two differ.**
+The door already said Intent is not a summary and Pattern is not a proof. That
+was negative — it said what the lines are not. This says what they are, and it
+is stricter in three ways worth naming, because each one changes what you are
+allowed to write:
+
+- **"names what *may* become true."** An Intent is a hypothesis, not a report.
+  It is written before the work is known to have succeeded, and it stays
+  written afterwards even if the work failed. An Intent that can only be
+  written once the outcome is certain is a summary wearing the form.
+- **"states how reality *can contradict* it."** A Pattern is a falsification
+  route. The test is not "does this describe the change" but "could someone
+  follow this and come back holding a refutation". A Pattern nobody could lose
+  is decoration.
+- **"preserves who stood behind the *attempt*."** The signature attaches to the
+  attempt, not to the claim. It survives the attempt being wrong. That is what
+  makes it safe to sign something that later turns out false — and what makes
+  an unsigned line worthless, since nobody stood anywhere.
+
+Read together: **the three lines are a wager, its losing condition, and the
+name of whoever placed it.** That is the whole grammar, and "operational" is
+the load-bearing word — it governs what gets written, not how it looks.
+
+---
+
 ## What this obliges, in the founder's terms and not an agent's
 
 Four things are stated on that page that no repository currently satisfies, and
