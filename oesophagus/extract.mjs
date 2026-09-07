@@ -124,10 +124,52 @@ async function gh(path, { raw = false } = {}) {
   return raw ? res.text() : res.json();
 }
 
+/**
+ * The door stated as separate files, which is how `sissyphus` states it.
+ *
+ * That repository is where this language came from, and it writes the door the
+ * way the founder writes it: an `Intent` file, a `Pattern` file, and a
+ * `Glimpse` file — no CLAUDE.md, no fence. This extractor called it doorless
+ * for as long as it existed, and the census went further and recorded the two
+ * files as *"both empty. Those are his to fill."* They had been filled since
+ * 22 August. Nobody opened them; the absence of a CLAUDE.md was read as the
+ * absence of a door.
+ *
+ * There is no `Signed` file, and one is not invented: `signer` and `timestamp`
+ * come back null, and `source` says which form was read, so a consumer can
+ * tell a three-line fence from this without guessing.
+ */
+async function doorFromFiles(slug, ref) {
+  const r = (p) => gh(`/repos/${slug}/contents/${p}?ref=${encodeURIComponent(ref)}`, { raw: true });
+  const [intentRaw, patternRaw, glimpseRaw] = await Promise.all([
+    r("Intent").catch(() => null),
+    r("Pattern").catch(() => null),
+    r("Glimpse").catch(() => null),
+  ]);
+  const intent = (intentRaw ?? "").trim();
+  const pattern = (patternRaw ?? "").trim();
+  if (!intent || !pattern) return null;
+  return {
+    source: "intent-pattern-files",
+    intent,
+    pattern,
+    signer: null,
+    timestamp: null,
+    glimpse: (glimpseRaw ?? "").trim() || null,
+    intent_words: words(intent),
+    pattern_words: words(pattern),
+    over_limit: words(intent) > WORD_LIMIT || words(pattern) > WORD_LIMIT,
+  };
+}
+
 /** The door on one ref, or a reason it is absent. Never invents one. */
 async function doorAt(slug, ref) {
   const text = await gh(`/repos/${slug}/contents/CLAUDE.md?ref=${encodeURIComponent(ref)}`, { raw: true });
-  if (text === null) return { ref, door: null, missing: "no CLAUDE.md" };
+  if (text === null) {
+    const filed = await doorFromFiles(slug, ref);
+    if (filed) return { ref, door: filed };
+    return { ref, door: null, missing: "no CLAUDE.md, and no Intent/Pattern files" };
+  }
   const fence = firstFence(text);
   const m = fence ? fence.match(DOOR) : null;
   if (!m) return { ref, door: null, missing: fence ? "fence is not a door" : "no fence in first 40 lines" };
@@ -135,6 +177,7 @@ async function doorAt(slug, ref) {
   return {
     ref,
     door: {
+      source: "claude-md-fence",
       intent, pattern, signer, timestamp,
       intent_words: words(intent),
       pattern_words: words(pattern),
@@ -287,7 +330,11 @@ if (AS_JSON) {
     const g = REMOTE ? `@${r.read_from}` : r.git.versioned ? `${r.git.branch}@${r.git.head}` : "UNVERSIONED";
     if (!r.door) { console.log(`  ✗ ${r.repo.padEnd(14)} ${g.padEnd(28)} ${r.missing}`); continue; }
     const flag = r.door.over_limit ? ` [${r.door.intent_words}/${r.door.pattern_words} words]` : "";
-    console.log(`  ✓ ${r.repo.padEnd(14)} ${g.padEnd(28)} ${r.door.signer}${flag}`);
+    // An unsigned door is not a defect. sissyphus states the door as Intent and
+    // Pattern files with no Signed line, so say which form was read rather than
+    // printing the word "null" where a name would be.
+    const who = r.door.signer ?? "(Intent/Pattern files — unsigned)";
+    console.log(`  ✓ ${r.repo.padEnd(14)} ${g.padEnd(28)} ${who}${flag}`);
     console.log(`      Intent : ${r.door.intent}`);
     console.log(`      Pattern: ${r.door.pattern}`);
     if (r.default_branch_differs) {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T20:43:28.338Z",
+  "generated_at": "2026-09-07T01:17:24.764Z",
   "word_limit": 17,
   "source": {
     "kind": "github",
@@ -9,6 +9,7 @@
     {
       "repo": ".github",
       "door": {
+        "source": "claude-md-fence",
         "intent": "Make one door every repo, Worker, session and commit in this org opens with.",
         "pattern": "Look at any of them. A first glimpse longer than three lines is wrong.",
         "signer": "Claude",
@@ -23,12 +24,13 @@
         "remote": "https://github.com/comfortcurators/.github",
         "default_branch": "main",
         "private": false,
-        "last_commit_at": "2026-09-06T13:04:25Z"
+        "last_commit_at": "2026-09-07T01:12:00Z"
       }
     },
     {
       "repo": "comfort-ci",
       "door": {
+        "source": "claude-md-fence",
         "intent": "Evidence-first CI/CD. A commit, a successful command and a live deployment are different facts.",
         "pattern": "Retired. Worker and containers deleted from Cloudflare. Verify there before believing anything here.",
         "signer": "Claude",
@@ -49,7 +51,7 @@
     {
       "repo": "curatom",
       "door": null,
-      "missing": "no CLAUDE.md",
+      "missing": "no CLAUDE.md, and no Intent/Pattern files",
       "read_from": "main",
       "git": {
         "versioned": true,
@@ -62,6 +64,7 @@
     {
       "repo": "curator",
       "door": {
+        "source": "claude-md-fence",
         "intent": "Observe, learn, implement. Keep agreement, conflict and tails — never reduce a decision to a vote.",
         "pattern": "Read the account and the live Worker. Queue topology here has drifted from reality.",
         "signer": "Claude",
@@ -76,12 +79,13 @@
         "remote": "https://github.com/comfortcurators/curator",
         "default_branch": "main",
         "private": true,
-        "last_commit_at": "2026-09-06T08:31:17Z"
+        "last_commit_at": "2026-09-06T20:45:16Z"
       }
     },
     {
       "repo": "curatory",
       "door": {
+        "source": "claude-md-fence",
         "intent": "The independent showroom and marketplace Worker. Its backend bulletin never reaches the public surface.",
         "pattern": "GET /health on the live Worker. Deployed by hand from main, single owner.",
         "signer": "Claude",
@@ -96,12 +100,13 @@
         "remote": "https://github.com/comfortcurators/curatory",
         "default_branch": "main",
         "private": true,
-        "last_commit_at": "2026-09-06T08:03:32Z"
+        "last_commit_at": "2026-09-06T21:54:23Z"
       }
     },
     {
       "repo": "Host",
       "door": {
+        "source": "claude-md-fence",
         "intent": "Carry the company's public surface. Describe benefits freely; never the mechanism behind them.",
         "pattern": "Ask the deployed URL, not this repository. Two implementations of these endpoints exist.",
         "signer": "Claude",
@@ -122,6 +127,7 @@
     {
       "repo": "HostOS",
       "door": {
+        "source": "claude-md-fence",
         "intent": "The operator plane. Privileged tools behind two independent gates; the blast radius is the point.",
         "pattern": "Count the manifest yourself. This file has quoted the wrong tool count for days.",
         "signer": "Claude",
@@ -136,12 +142,13 @@
         "remote": "https://github.com/comfortcurators/HostOS",
         "default_branch": "main",
         "private": true,
-        "last_commit_at": "2026-09-06T20:22:49Z"
+        "last_commit_at": "2026-09-06T21:51:42Z"
       }
     },
     {
       "repo": "in",
       "door": {
+        "source": "claude-md-fence",
         "intent": "Nearly empty. One README, one archive of an old Host extraction. No running code.",
         "pattern": "`ls archive/`. If you expected a service here, you are in the wrong repository.",
         "signer": "Claude",
@@ -162,6 +169,7 @@
     {
       "repo": "kimi",
       "door": {
+        "source": "claude-md-fence",
         "intent": "A coding-agent Worker: tool-calling loop, durable job store, container sandbox, GitHub and Cloudflare surfaces.",
         "pattern": "Run git checkout main first. This repo's GitHub default branch is far behind it.",
         "signer": "Claude",
@@ -181,13 +189,14 @@
       "default_branch_differs": {
         "default_branch": "add-badges-to-readme",
         "door_on_default": null,
-        "missing_on_default": "no CLAUDE.md",
+        "missing_on_default": "no CLAUDE.md, and no Intent/Pattern files",
         "note": "default branch and main disagree; the door above is main's"
       }
     },
     {
       "repo": "llm",
       "door": {
+        "source": "claude-md-fence",
         "intent": "Cloudflare's LLM chat-app template, deployed unmodified as the `llm` Worker.",
         "pattern": "Diff `src/` against cloudflare/templates. Divergence is the only thing worth reading.",
         "signer": "Claude",
@@ -208,6 +217,7 @@
     {
       "repo": "rajvanshyash",
       "door": {
+        "source": "claude-md-fence",
         "intent": "The founder's personal site — identity and publication index — built on a React Router starter.",
         "pattern": "Read git log. The real work here is the identity commits; the rest is template.",
         "signer": "Claude",
@@ -228,6 +238,7 @@
     {
       "repo": "seek",
       "door": {
+        "source": "claude-md-fence",
         "intent": "Reek: a private agent Worker that edits and deploys Cloudflare Workers without approval prompts.",
         "pattern": "npx vitest run. Flip auth.ts's guard to `return true` and two cases go red.",
         "signer": "Claude",
@@ -247,20 +258,30 @@
     },
     {
       "repo": "sissyphus",
-      "door": null,
-      "missing": "no CLAUDE.md",
+      "door": {
+        "source": "intent-pattern-files",
+        "intent": "change is certain to me . want something from it .",
+        "pattern": "weaved within aforementioned .",
+        "signer": null,
+        "timestamp": null,
+        "glimpse": "curator's curosity:\n-greeted with glimpse \n-serves depth to the asker",
+        "intent_words": 11,
+        "pattern_words": 4,
+        "over_limit": false
+      },
       "read_from": "main",
       "git": {
         "versioned": true,
         "remote": "https://github.com/yashrajvansh/sissyphus",
         "default_branch": "main",
         "private": false,
-        "last_commit_at": "2026-09-06T04:41:05Z"
+        "last_commit_at": "2026-09-07T01:08:06Z"
       }
     },
     {
       "repo": "Sol",
       "door": {
+        "source": "claude-md-fence",
         "intent": "An n8n-on-DigitalOcean deployment template, plus the mythos documents kept beside it.",
         "pattern": "Read README.md and mythos_system_card.md. Nothing here is deployed on Cloudflare.",
         "signer": "Claude",
@@ -281,6 +302,7 @@
     {
       "repo": "Superhostos",
       "door": {
+        "source": "claude-md-fence",
         "intent": "Govern heterogeneous compute by cost and capability. Hospitality is the workload, never the identity.",
         "pattern": "Ask the live system, not this file. It has been confidently wrong before.",
         "signer": "Claude",
@@ -295,7 +317,7 @@
         "remote": "https://github.com/comfortcurators/Superhostos",
         "default_branch": "main",
         "private": true,
-        "last_commit_at": "2026-09-06T20:16:33Z"
+        "last_commit_at": "2026-09-06T21:22:31Z"
       }
     }
   ]
