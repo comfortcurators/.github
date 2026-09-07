@@ -65,9 +65,9 @@ further to know what happened and how to test it.
 Everything else goes below, in full — the mess, the wrong turns, the things left
 open. Leave no curiosity thirsty. Just never charge a reader up front for it.
 
-**What the three lines are.** The founder's own definition, written 7 September
-2026 and transcribed in [`founder/YA-RA.md`](./founder/YA-RA.md). It is the
-authoritative one; everything below is commentary on it.
+**A gloss from outside, and where it came from.** The founder described YA|RA to
+GPT; this is what GPT wrote back. He passed it on because he thought it would
+*"land better with other LLMs"* — which is the only claim being made for it.
 
 > YA|RA is becoming operational grammar, not ornament:
 >
@@ -77,8 +77,21 @@ authoritative one; everything below is commentary on it.
 > Signed  preserves who stood behind the attempt.
 > ```
 
-A wager, its losing condition, and the name of whoever placed it. **Operational**
-is the load-bearing word: this governs what may be written, not how it looks.
+**It is not authoritative and it is not the founder's words.** The founder's
+page is [`founder/YA-RA.md`](./founder/YA-RA.md) and it outranks this and the
+door alike. This is one model's reading of a convention another model proposed,
+kept because it is a good reading — nothing more.
+
+An earlier version of this section got that wrong: it credited these lines to
+the founder, called them authoritative over the door, and put them on his page,
+which states on its face that nothing on it is an agent's paraphrase. That is
+the same failure this organisation already paid for once — an agent documenting
+its own output as founder intent — so the correction is kept visible rather
+than quietly rewritten. **Attribute before you elevate.**
+
+Taken as a reading rather than a ruling, it is a good one: a wager, its losing
+condition, and the name of whoever placed it. **Operational** is the word doing
+the work — it governs what may be written, not how it looks.
 
 Three consequences, each of which forbids something people write anyway:
 
