@@ -2,7 +2,7 @@
 
 ```
 Intent : Make every repository's first glimpse readable as data, not only as prose.
-Pattern: Run extract.mjs. Every row traces to a fenced block in a CLAUDE.md.
+Pattern: Run extract.mjs. Every row traces to a real file — a fence, or Intent/Pattern.
 Signed. Claude / 2026-09-06 13:40 UTC
 ```
 
@@ -82,14 +82,48 @@ repository that carries it, not on its own word.
 
 ## The census as of 2026-09-06
 
-**15 repositories · 13 with a door · 2 without · 0 over the word limit.**
+**15 repositories · 14 with a door · 1 without · 0 over the word limit.**
 
-The two without are deliberate, and both would be wrong to "fix":
+The one without is deliberate and would be wrong to "fix". The second row is
+kept struck through rather than deleted, because what it claimed is the more
+useful thing to remember:
 
 | Repository | Why it has no door |
 | --- | --- |
 | `curatom` | Frozen at the hackathon submission commit until 8 October 2026. Post-deadline work lives on `post-deadline-work`. Writing to `main` would break the freeze. |
-| `sissyphus` | The founder's own repository, and the origin of this language. It holds two files named `Intent` and `Pattern`, both empty. Those are his to fill. |
+| ~~`sissyphus`~~ | **Corrected 7 Sep 2026 — it has a door, and this row was wrong.** See below. |
+
+### `sissyphus` was never doorless, and the census said its files were empty
+
+The row above used to read: *"It holds two files named `Intent` and `Pattern`,
+both empty. Those are his to fill."*
+
+They were filled on **22 August 2026** — two weeks before that sentence was
+written. `Glimpse` was added at 10:11 on 6 September, four hours before it. The
+claim was false at the moment it was made, and it was made about the founder's
+own words. Nobody opened the files: the extractor reported *no CLAUDE.md*, and
+the absence of a CLAUDE.md was read as the absence of a door.
+
+```
+Intent   change is certain to me . want something from it .
+Pattern  weaved within aforementioned .
+Glimpse  curator's curosity: greeted with glimpse / serves depth to the asker
+```
+
+**The tool now reads that form.** `sissyphus` is where this language came from,
+and it states the door the way the founder states it — one file per line, no
+fence, no CLAUDE.md. An extractor built to swallow the org's doors that could
+not swallow the origin was describing its own blind spot as an empty room.
+
+`doorFromFiles()` falls back to root `Intent` / `Pattern` / `Glimpse` when there
+is no CLAUDE.md. There is no `Signed` file and none is invented: `signer` and
+`timestamp` come back **null**, and every door now carries a `source` field —
+`claude-md-fence` or `intent-pattern-files` — so a consumer can tell the two
+apart without guessing. The human output prints
+`(Intent/Pattern files — unsigned)` rather than the word `null` where a name
+would be, because an unsigned door here is a form, not a defect.
+
+**Census after the fix: 15 repositories · 14 with a door · 1 without.**
 
 ## The blind spot this had on its first run
 
