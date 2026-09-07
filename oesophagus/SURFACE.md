@@ -23,6 +23,24 @@ every case that broke the wall, those names *are* the finding.
 Read that first line before anything else: **61% of the codebase already sits
 inside the rule.** The interesting number is 14, not 1,056.
 
+> **Re-run at 22:30 UTC the same day, whole repo rather than `apps/api`:**
+> **119 suites · 1,067 cases · 73 within 8 · 14 over 17.** The delta
+> reconciles exactly and is worth stating because an unexplained drift in this
+> number is the only thing that would make it useless: `apps/web`'s 2 suites and
+> 10 cases, which the first run scoped out, plus **one** case added to
+> `self-ci-edge.test.ts` — the guard that now parses `wrangler.toml` instead of
+> comparing a list against itself.
+>
+> **The count over the wall did not move.** Fourteen, the same fourteen. Every
+> module added to this repository today stayed inside the rule, and nothing that
+> was outside it came back in.
+
+**A note on how to quote this file.** The number to report is **14**, or the
+name of one module. Reporting "1,067 tests passing" as reassurance inverts the
+rule this census exists to apply — under it, a large total is the finding and
+not the health check. That inversion happened in a session on the day this was
+written, by the same author, hours after writing the sentence above.
+
 Nothing here is over-tested. Every file over the wall is one file naming several
 unrelated concerns, and the suite names say so out loud:
 
