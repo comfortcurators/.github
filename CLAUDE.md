@@ -16,6 +16,38 @@ directly. Where the two disagree, that one wins. His standing positions, each
 quoted and then measured against what the system actually proves, are in
 [`founder/STANDARDS.md`](./founder/STANDARDS.md).
 
+### The language is called **YA|RA**, and it is spelled two ways
+
+Founder decision, 7 September 2026. The Intent/Pattern language has a name, and
+it is his rather than an agent's — which matters beyond taste, since the door
+below was proposed by an agent and approved, while the name comes from his own
+page.
+
+**The bar is the point.** `YA|RA` has the form drawn into it: two sides, one
+separator. Intent | Pattern. The name is its own diagram.
+
+A `|` is not legal in a path, a URL, or a package name, so it degrades the
+moment it touches a filesystem — `founder/YA-RA.md` is that already happening.
+Rather than let it drift into three spellings, two are fixed and one is barred:
+
+| Where | Write | Why |
+| --- | --- | --- |
+| Prose — docs, commits, PRs, chat | **`YA\|RA`** | The canonical name. The bar carries the meaning. |
+| Paths, URLs, package and branch names | **`ya-ra`** | `\|` is illegal there. Existing `founder/YA-RA.md` stays as it is; new paths use the lowercase form. |
+| Anywhere | ~~`YARA`~~ — **never bare** | Already a well-known malware-identification rule language, and also described as a "pattern language". Someone searching for one finds the other. |
+
+The third row is the only one that is a real constraint; the first two are just
+the same name surviving contact with computers.
+
+**A note on how this was agreed, because it is the more useful part.** The rule
+was proposed in shorthand — *"YA|RA canonical in prose, ya-ra in paths, never
+bare YARA"* — and the founder agreed to it while saying plainly that he did not
+know what it meant. It was then explained in one paragraph of ordinary words and
+agreed again. A convention nobody can check is exactly the thing this
+organisation's door exists to prevent, and a rule accepted on the strength of
+its phrasing would have been one. If a convention here cannot earn itself in a
+sentence, it should not exist.
+
 ## The door
 
 Everything in this org opens with this, and nothing else:
