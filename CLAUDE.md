@@ -65,6 +65,33 @@ further to know what happened and how to test it.
 Everything else goes below, in full — the mess, the wrong turns, the things left
 open. Leave no curiosity thirsty. Just never charge a reader up front for it.
 
+**What the three lines are.** The founder's own definition, written 7 September
+2026 and transcribed in [`founder/YA-RA.md`](./founder/YA-RA.md). It is the
+authoritative one; everything below is commentary on it.
+
+> YA|RA is becoming operational grammar, not ornament:
+>
+> ```
+> Intent  names what may become true.
+> Pattern states how reality can contradict it.
+> Signed  preserves who stood behind the attempt.
+> ```
+
+A wager, its losing condition, and the name of whoever placed it. **Operational**
+is the load-bearing word: this governs what may be written, not how it looks.
+
+Three consequences, each of which forbids something people write anyway:
+
+- Intent is a **hypothesis**, so it is written before the outcome is known and
+  it stays written when the attempt fails. An Intent you could only write once
+  the result was certain is a summary wearing the form.
+- Pattern is a **falsification route**, so the test is not "does this describe
+  the change" but "could someone walk this and come back holding a refutation".
+  A Pattern nobody could lose is decoration.
+- Signed attaches to the **attempt**, not the claim, which is what makes it safe
+  to sign something later found false — and what makes an unsigned line
+  worthless, since nobody stood anywhere.
+
 Two things it is not. **Intent is not a summary** — it bounds what you are given
 and what you may do with it; arrive for one thing, receive that thing. **Pattern
 is not a proof** — it is the route by which you can be found wrong, stated so
