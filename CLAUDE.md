@@ -139,6 +139,36 @@ An import edge is not an execution. A green check is not a deploy. A stored URL
 is not a syncing feed. A cumulative average is not a current slope. A standing
 credential is permission asserted forever and proven never.
 
+## Eight is enough, seventeen is the maximum
+
+Founder's rule, 8 September 2026, and it binds every repository in this org:
+
+> **8 is enough, 17 is max. More than that is a count standing in for weak
+> individual tests.**
+
+It is a *quality* bar, not a budget. A suite grows past seventeen exactly one
+way — by writing **one assertion per case instead of one property per case** —
+and every case added that way makes the suite longer without making it catch
+anything new. A case should assert a property *and every way that property can
+break*. If a real property needs a case and the file is at its ceiling, merge
+two weak neighbours; do not add an eighteenth.
+
+**Measured, not asserted.** `comfortcurators/seek` was cut from 33 cases to 17
+the day this rule was set. The drift was exactly the symptom above: three
+separate cases for *"only the actor may complete"*, two in `poll.test.ts`
+restating a third, one asserting `NaN` handling no caller produces, and one
+documenting behaviour the code deliberately does not have. After the cut, with
+the three real defects that suite exists for — a fail-open auth guard, a flat
+3000ms poll floor, and a `claimTurn` that reset its own abandonment clock —
+all restored **simultaneously**, 5 of the 17 went red and every defect was
+caught. Half the count, none of the reach.
+
+That last step is the rule's own enforcement, and it is not optional: **cutting
+a suite is only safe if you then restore the bugs it exists to catch and watch
+it fail.** A shorter suite nobody has seen go red is not a tighter suite, it is
+a smaller one — which is this org's founding law (*a faculty that nothing calls
+is not evidence*) pointed at the tests themselves.
+
 ## No CI — deploy by hand (retired 25 Aug 2026)
 
 `comfort-ci` is retired. Founder decision, 25 Aug 2026: it was a real DeepTech
