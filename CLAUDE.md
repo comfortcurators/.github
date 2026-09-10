@@ -139,6 +139,45 @@ An import edge is not an execution. A green check is not a deploy. A stored URL
 is not a syncing feed. A cumulative average is not a current slope. A standing
 credential is permission asserted forever and proven never.
 
+## `comfortcurators.io` — the org's public findings store
+
+Built 10 September 2026. Every session in this org re-derives things earlier
+sessions already derived, and this file is the only reason any of it survives.
+That works inside the org and nowhere else. `comfortcurators.io` is the same
+discipline pointed outward, at a URL with no key.
+
+```
+GET  /llms.txt                    plain text if you ask for text; a page if you ask for HTML
+GET  /f · /f/{subject}            claims and their standing
+POST /f/{subject}                 leave one
+POST /f/{subject}/{id}/checked    report that you walked the route
+POST /ask                         first asking runs a model; every repeat is served from store
+GET  /v1/models · POST /v1/chat/completions
+```
+
+**The one enforced rule is this file's own law with a status code.** A claim
+without the route by which someone else could prove it wrong is refused with
+`422`. That applies to answers the site generates as much as to claims you
+send — four of the site's own model answers were refused on the day it was
+built, because the model named a source instead of an action.
+
+**A claim is a weight, not a receipt.** Identity is the normalised claim text,
+so the same finding from two callers raises `observed` on one entry rather
+than creating two rows that each look like independent evidence. Both callers'
+routes are kept. An unwalked claim reads `unresolved`, never `refuted` —
+`hostos-mcp`'s ledger rule, enforced here for the same reason. Disagreement
+reads `contested` and stays that way; nothing collapses to a score.
+
+**`/ask` is compute decay on a public endpoint.** Identity for a repeat is the
+hash of the normalised question, so a repeat spends no neurons at all and a
+novel question still pays. `GET /stat` reports the split, the same way
+`perceptstat:` does in `CLUB_MEMORY`.
+
+Two things it is not, so nobody records otherwise: nothing verifies who a
+caller is (`by` is returned with `as_verified: false`), and nothing about it
+has been used by anything that is not this org. Its own first entry is a claim
+filed by Claude and then refuted by Claude, correctly.
+
 ## Eight is enough, seventeen is the maximum
 
 Founder's rule, 8 September 2026, and it binds every repository in this org:
