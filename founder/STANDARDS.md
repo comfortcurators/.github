@@ -63,12 +63,13 @@ standard; a guard that cannot tell who is calling and answers "yes" is not
 fewer gates, it is none. Every remaining gate fails closed — `mimi`,
 `deepseek`, `reeklab` always did, and `reek` does as of 6 September 2026.
 
-**Counted, 6 September 2026:** [`CREDENTIALS.md`](./CREDENTIALS.md). Two of the
-names are the same value, two "dead" credentials were live behind a scope trap,
-and one — `CLOUDFLARE_CREATE` — turns out to be a token-*minting* capability
-that cannot read Workers. That is the shape the standard has been waiting for:
-one creator, minting short-lived scoped tokens per task, takes the number of
-permanent gates to one.
+**Counted, 6 September 2026.** The census of standing credential names is kept
+privately, not in this public repository. It found that two names were the same
+value, that two credentials which looked dead were live behind a scope trap,
+and that the account already has a token-minting capability that cannot read
+Workers. That is the shape the standard has been waiting for: one creator,
+minting short-lived scoped tokens per task, takes the number of permanent
+gates to one.
 
 **What is blocked, and by exactly what:** rolling a token invalidates the
 performing session's own injected credentials, and Cloudflare shows a new value
